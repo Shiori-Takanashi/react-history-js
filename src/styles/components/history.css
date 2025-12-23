@@ -1,7 +1,14 @@
 /* src/styles/components/history.css */
 
-.history-container {
+.history-shell {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  gap: 0.5rem;
+  min-height: 0;  /* flex アイテムが親の高さを超えることを許可 */
+}
+
+.history-container {
   overflow-y: auto;
   border: 1px solid #c7d9fc;
   background-color: #e9f4f8cd;
@@ -11,6 +18,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;  /* 親の残り空間を埋める */
+  max-height: 300px;  /* スクロール有効化のため最大高さを設定 */
 }
 
 /* ネイティブスクロールバーのスタイル（Chromium/WebKit系） */
@@ -65,4 +74,32 @@
 
 .history-time {
   font-size: 0.85rem;
+}
+
+.history-reset-button {
+  padding: 0.5rem 1rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 0 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.history-reset-button:hover {
+  background-color: #ff5252;
+}
+
+.history-reset-button:active {
+  background-color: #dd3333;
+}
+
+.history-empty {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+  font-size: 0.95rem;
 }

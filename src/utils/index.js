@@ -8,5 +8,4 @@ export {
 export {
   getHistoryFromStorage,
   saveHistoryToStorage,
-  clearHistoryFromStorage,
 } from "./historyStorage";

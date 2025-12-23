@@ -10,6 +10,7 @@ export default function History() {
   }
 
   return (
+    <div className="history-shell">
     <div className="history-container">
       <ul className="history-list">
         {history.map((item, index) => (
@@ -21,9 +22,10 @@ export default function History() {
           </li>
         ))}
       </ul>
-      <button onClick={resetHistory} className="history-reset-button">
+    </div>
+    <button onClick={resetHistory} className="history-reset-button">
         履歴リセット
-      </button>
+    </button>
     </div>
   );
 }
