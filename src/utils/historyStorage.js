@@ -27,14 +27,3 @@ export function saveHistoryToStorage(history) {
     console.error("Failed to save history to localStorage:", error);
   }
 }
-
-/**
- * localStorage から履歴をクリア
- */
-export function clearHistoryFromStorage() {
-  try {
-    localStorage.removeItem(STORAGE_KEY);
-  } catch (error) {
-    console.error("Failed to clear history from localStorage:", error);
-  }
-}

@@ -3,7 +3,7 @@ import { useHistory } from "../hooks/useHistory";
 import "../styles/components/history.css";
 
 export default function History() {
-  const { history } = useHistory();
+  const { history, resetHistory } = useHistory();
 
   if (history.length === 0) {
     return <p className="history-empty">まだ履歴がありません</p>;
@@ -21,6 +21,9 @@ export default function History() {
           </li>
         ))}
       </ul>
+      <button onClick={resetHistory} className="history-reset-button">
+        履歴リセット
+      </button>
     </div>
   );
 }

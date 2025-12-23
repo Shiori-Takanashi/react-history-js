@@ -13,7 +13,7 @@ export function useSetHistory(setHistory) {
       setHistory(newHistory);
       saveHistoryToStorage(newHistory);
     },
-    [setHistory]
+    [setHistory],
   );
 
   return setHistoryWrapper;

@@ -32,7 +32,7 @@ export function useAddHistory(setHistory) {
         return newHistory;
       });
     },
-    [setHistory]
+    [setHistory],
   );
 
   return addHistory;
