@@ -1,0 +1,130 @@
+/* src/styles/pages/loading.css */
+.loading-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.loading-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+.logo-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  user-select: none;
+  pointer-events: none;
+}
+
+.loading-text {
+  margin: 1.5rem 0;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.9;
+  user-select: none;
+}
+
+.loading-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 400px;
+  user-select: none;
+}
+
+.dots-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite both;
+  opacity: 0.8;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .loading-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loading-text {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .loading-description {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+}
