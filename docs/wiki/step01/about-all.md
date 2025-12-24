@@ -122,17 +122,18 @@ App.jsx （アプリケーション全体の入口）
 
 ### 設定の集約と管理（config/ディレクトリ）
 
-ルート直下の設定ファイルの散在を避けるため、すべての開発ツール設定を `config/` ディレクトリに集約しています。
+ルート直下の設定ファイルの散在を避けるため、すべての開発ツール設定を `config/`
+ディレクトリに集約しています。
 
 **config/ 配下のファイル**
 
-| ファイル                | 役割                           | 説明                                                              |
-| ----------------------- | ------------------------------ | ----------------------------------------------------------------- |
-| `eslint.config.js`      | ESLint フラット設定            | ブラウザ向けJSX と Node向けスクリプトの 2つオーバーライド |
-| `prettier.config.js`    | Prettier フォーマッタ設定      | JS/JSX、CSS、Markdown ファイルの統一的なスタイル定義 |
-| `.prettierignore`       | Prettier 無視パターン          | `node_modules`, `dist`, `coverage` など除外対象        |
-| `stylelint.config.js`   | Stylelint CSS チェッカー設定   | CSS ファイルのコード品質管理                              |
-| `.stylelintignore`      | Stylelint 無視パターン         | ビルド出力やテンポラリを対象外に                          |
+| ファイル              | 役割                         | 説明                                                      |
+| --------------------- | ---------------------------- | --------------------------------------------------------- |
+| `eslint.config.js`    | ESLint フラット設定          | ブラウザ向けJSX と Node向けスクリプトの 2つオーバーライド |
+| `prettier.config.js`  | Prettier フォーマッタ設定    | JS/JSX、CSS、Markdown ファイルの統一的なスタイル定義      |
+| `.prettierignore`     | Prettier 無視パターン        | `node_modules`, `dist`, `coverage` など除外対象           |
+| `stylelint.config.js` | Stylelint CSS チェッカー設定 | CSS ファイルのコード品質管理                              |
+| `.stylelintignore`    | Stylelint 無視パターン       | ビルド出力やテンポラリを対象外に                          |
 
 **ルート直下に残している設定**
 
@@ -142,7 +143,8 @@ App.jsx （アプリケーション全体の入口）
 **メリット**
 
 1. **エディタ自動検出維持** - Vite や EditorConfig はルートで自動検出
-2. **スクリプト統一** - `package.json` の lint/format スクリプトが `config/` を明示参照
+2. **スクリプト統一** - `package.json` の lint/format スクリプトが `config/`
+   を明示参照
 3. **ルート整理** - 設定ファイルが集約されてシンプル
 4. **保守性向上** - 設定の所在が明確で、チーム内での齟齬が減る
 
