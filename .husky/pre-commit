@@ -1,6 +1,3 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "🔍 Running format check..."
 npm run format:check || exit 1
 
@@ -11,3 +8,4 @@ echo "🔍 Running Stylelint..."
 npm run stylelint || exit 1
 
 echo "✅ All checks passed!"
+

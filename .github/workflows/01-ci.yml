@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  NODE_VERSION: "24"
+
+jobs:
+  setup:
+    name: Setup
+    uses: ./.github/workflows/02-ci-setup.yml
+
+  format:
+    name: Format Check
+    needs: setup
+    uses: ./.github/workflows/03-ci-format.yml
+
+  lint:
+    name: ESLint Check
+    needs: setup
+    uses: ./.github/workflows/04-ci-lint.yml
+
+  stylelint:
+    name: Stylelint Check
+    needs: setup
+    uses: ./.github/workflows/05-ci-stylelint.yml
+
+  build:
+    name: Build
+    needs: [format, lint, stylelint]
+    uses: ./.github/workflows/06-ci-build.yml
