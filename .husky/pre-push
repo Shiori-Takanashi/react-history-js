@@ -2,4 +2,3 @@ echo "🔨 Building project..."
 npm run build || exit 1
 
 echo "✅ Build successful!"
-
