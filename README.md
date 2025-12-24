@@ -61,7 +61,7 @@ src/
 
 ## 挙動メモ
 
-- ルーティング: `path: "*"` を DefaultLayout に集約。Outlet は使わず、`pages.json` のパスに応じてタイトルを決定。
+- ルーティング: `path: "*"` を DefaultLayout に集約。Outlet は使わず`pages.json` のパスに応じてタイトル決定。
 - 履歴記録: `Tracker` が `useLocation` の `pathname` と `key` を監視し `addHistory(pathname, key)` を実行。
 - 重複排除: 同一パス・同一 navigation key で 120ms 以内のイベントは無視（StrictMode 対策）。
 - スクロール: `.history-container` は `overflow-y: auto`。WebKit/Firefox 用にカスタムスクロールバー適用。
