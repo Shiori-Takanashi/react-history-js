@@ -117,15 +117,15 @@ src/styles/
 
 ### 全体構成
 
-このアプリケーションは、React Router v7 を使用したシングルページアプリケーション（SPA）です。
-すべてのルートが同じレイアウト（DefaultLayout）を表示します。
+このアプリケーションは、React Router
+v7 を使用したシングルページアプリケーション（SPA）です。すべてのルートが同じレイアウト（DefaultLayout）を表示します。
 
 ### ルーティング構造
 
 ```jsx
 export const router = createBrowserRouter([
   {
-    path: "*",
+    path: '*',
     element: <DefaultLayout />,
   },
 ]);
@@ -150,7 +150,7 @@ export const router = createBrowserRouter([
 
 ```jsx
 const currentPage = pages.find((p) => p.path === location.pathname);
-const title = currentPage?.title || "Page";
+const title = currentPage?.title || 'Page';
 ```
 
 `pages.json` から現在のパスに対応するタイトルを取得・表示します。
@@ -325,7 +325,7 @@ if (isSamePath && isSameKey && withinWindow) {
 const { addHistory } = useHistory();
 
 // ページ遷移時に自動で呼び出される
-addHistory("/page-path", navigationKey);
+addHistory('/page-path', navigationKey);
 ```
 
 ### 履歴の取得
@@ -354,7 +354,8 @@ setHistory([]);
 
 ## 今後の拡張可能性
 
-1. **ページコンテンツの追加** - `<Outlet />` を復活させてページ固有のコンテンツを実装
+1. **ページコンテンツの追加** - `<Outlet />`
+   を復活させてページ固有のコンテンツを実装
 2. **履歴のフィルタリング** - ページごとの履歴表示、検索機能など
 3. **永続化** - localStorage に履歴を保存し、リロード後も復元
 4. **分析機能** - 訪問パターンの分析など

@@ -1,6 +1,6 @@
-import "../styles/pages/loading.css";
-import cat from "../assets/cat.svg";
-import tiger from "../assets/tiger.svg";
+import '../styles/pages/loading.css';
+import cat from '../assets/cat.svg';
+import tiger from '../assets/tiger.svg';
 
 export default function Loading() {
   const animal = import.meta.env.DEV ? cat : tiger;

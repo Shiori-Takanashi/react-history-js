@@ -1,15 +1,15 @@
-import { useLocation, Outlet } from "react-router-dom";
-import Tracker from "../observers/Tracker";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import History from "../components/History";
-import pages from "../data/pages.json";
-import "../styles/layouts/default-layout.css";
+import { useLocation, Outlet } from 'react-router-dom';
+import Tracker from '../observers/Tracker';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import History from '../components/History';
+import pages from '../data/pages.json';
+import '../styles/layouts/default-layout.css';
 
 export default function DefaultLayout() {
   const location = useLocation();
   const currentPage = pages.find((p) => p.path === location.pathname);
-  const title = currentPage ? currentPage.title : "Unknown Page";
+  const title = currentPage ? currentPage.title : 'Unknown Page';
 
   return (
     <div className="app-shell">

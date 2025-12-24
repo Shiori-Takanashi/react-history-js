@@ -1,7 +1,7 @@
 // src/hooks/useAddHistory.js
-import { useCallback, useRef } from "react";
-import { saveHistoryToStorage } from "../../utils/historyStorage";
-import { createDuplicateChecker, createHistoryEntry } from "../../utils";
+import { useCallback, useRef } from 'react';
+import { saveHistoryToStorage } from '../../utils/historyStorage';
+import { createDuplicateChecker, createHistoryEntry } from '../../utils';
 
 /**
  * 履歴追加ロジックを提供するカスタムフック
@@ -12,7 +12,7 @@ export function useAddHistory(setHistory) {
   const duplicateCheckerRef = useRef(createDuplicateChecker());
 
   const addHistory = useCallback(
-    (path, key = "") => {
+    (path, key = '') => {
       if (!path) return;
 
       const checker = duplicateCheckerRef.current;
@@ -32,7 +32,7 @@ export function useAddHistory(setHistory) {
         return newHistory;
       });
     },
-    [setHistory],
+    [setHistory]
   );
 
   return addHistory;

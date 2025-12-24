@@ -11,7 +11,7 @@ reset 機能を追加した後、アプリケーションがページを正常�
 `src/hooks/useHistoryManager.js` で以下のインポートがされているが：
 
 ```javascript
-import { useResetHistory } from "./composites/useResetHistory";
+import { useResetHistory } from './composites/useResetHistory';
 ```
 
 `src/hooks/composites/useResetHistory.js` ファイルが存在しない可能性が高い。
@@ -26,15 +26,16 @@ import { useResetHistory } from "./composites/useResetHistory";
 export {
   getHistoryFromStorage,
   saveHistoryToStorage,
-  clearHistoryFromStorage,  // ← これは削除すべき
-} from "./historyStorage";
+  clearHistoryFromStorage, // ← これは削除すべき
+} from './historyStorage';
 ```
 
 `src/utils/historyStorage.js` で定義されているが、使用されていない未使用コード。
 
 ### 3. **historyStorage.js に clearHistoryFromStorage が残っている**
 
-前回の issue01 の修繕計画に従い、`clearHistoryFromStorage()` を削除するはずだったが、削除されていない。
+前回の issue01 の修繕計画に従い、`clearHistoryFromStorage()`
+を削除するはずだったが、削除されていない。
 
 ## エラースタック
 
@@ -57,8 +58,8 @@ useResetHistory is not a function
 
 ```javascript
 // src/hooks/composites/useResetHistory.js
-import { useCallback } from "react";
-import { saveHistoryToStorage } from "../../utils/historyStorage";
+import { useCallback } from 'react';
+import { saveHistoryToStorage } from '../../utils/historyStorage';
 
 /**
  * 履歴をリセットするカスタムフック
@@ -67,8 +68,8 @@ import { saveHistoryToStorage } from "../../utils/historyStorage";
  */
 export function useResetHistory(setHistory) {
   return useCallback(() => {
-    setHistory([]);                    // Context の state をリセット
-    saveHistoryToStorage([]);          // localStorage を同期
+    setHistory([]); // Context の state をリセット
+    saveHistoryToStorage([]); // localStorage を同期
   }, [setHistory]);
 }
 ```
@@ -83,7 +84,7 @@ export function clearHistoryFromStorage() {
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch (error) {
-    console.error("Failed to clear history from localStorage:", error);
+    console.error('Failed to clear history from localStorage:', error);
   }
 }
 ```
@@ -95,22 +96,23 @@ export {
   getHistoryFromStorage,
   saveHistoryToStorage,
   // clearHistoryFromStorage は削除
-} from "./historyStorage";
+} from './historyStorage';
 ```
 
 ## ファイル一覧（修繕対象）
 
-| ファイル | 状態 | 修繕内容 |
-|---------|------|---------|
-| `src/hooks/composites/useResetHistory.js` | ❌ 存在しない | **作成** |
-| `src/utils/historyStorage.js` | ⚠️ 未使用コード残り | **削除** |
-| `src/utils/index.js` | ⚠️ 不要なエクスポート | **削除** |
+| ファイル                                  | 状態                  | 修繕内容 |
+| ----------------------------------------- | --------------------- | -------- |
+| `src/hooks/composites/useResetHistory.js` | ❌ 存在しない         | **作成** |
+| `src/utils/historyStorage.js`             | ⚠️ 未使用コード残り   | **削除** |
+| `src/utils/index.js`                      | ⚠️ 不要なエクスポート | **削除** |
 
 ## 修繕の必要性
 
 **重要度：** 🔴 緊急
 
 **理由：**
+
 - ✗ アプリケーション起動不可
 - ✗ ページが表示されない
 - ✗ ユーザーは何もできない状態

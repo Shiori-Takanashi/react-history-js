@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import HistoryLayout from "../layouts/HistoryLayout";
-import "../styles/pages/not-found.css";
+import { Link } from 'react-router-dom';
+import HistoryLayout from '../layouts/HistoryLayout';
+import '../styles/pages/not-found.css';
 
 export default function NotFound() {
   return (

@@ -8,8 +8,8 @@ const DEFAULT_DUPLICATE_WINDOW = 120; // ms
  */
 export class DuplicateChecker {
   constructor() {
-    this.lastPath = "";
-    this.lastKey = "";
+    this.lastPath = '';
+    this.lastKey = '';
     this.lastTime = 0;
   }
 
@@ -20,7 +20,7 @@ export class DuplicateChecker {
    * @param {number} window - 重複判定のウィンドウ（ms）
    * @returns {boolean} 重複している場合は true
    */
-  isDuplicate(path, key = "", window = DEFAULT_DUPLICATE_WINDOW) {
+  isDuplicate(path, key = '', window = DEFAULT_DUPLICATE_WINDOW) {
     const now = Date.now();
     const isSamePath = this.lastPath === path;
     const isSameKey = this.lastKey === key;
@@ -34,7 +34,7 @@ export class DuplicateChecker {
    * @param {string} path - パス
    * @param {string} key - ナビゲーションキー
    */
-  update(path, key = "") {
+  update(path, key = '') {
     this.lastPath = path;
     this.lastKey = key;
     this.lastTime = Date.now();
@@ -44,8 +44,8 @@ export class DuplicateChecker {
    * リセット
    */
   reset() {
-    this.lastPath = "";
-    this.lastKey = "";
+    this.lastPath = '';
+    this.lastKey = '';
     this.lastTime = 0;
   }
 }

@@ -1,0 +1,12 @@
+# Build outputs and external folders
+node_modules/
+dist/
+coverage/
+.vercel/
+
+# Static assets and generated files
+public/
+*.log
+
+# GitHub workflows (YAML formatting handled separately)
+.github/

@@ -1,6 +1,6 @@
 // src/hooks/useSetHistory.js
-import { useCallback } from "react";
-import { saveHistoryToStorage } from "../../utils/historyStorage";
+import { useCallback } from 'react';
+import { saveHistoryToStorage } from '../../utils/historyStorage';
 
 /**
  * 履歴の更新/リセットロジックを提供するカスタムフック
@@ -13,7 +13,7 @@ export function useSetHistory(setHistory) {
       setHistory(newHistory);
       saveHistoryToStorage(newHistory);
     },
-    [setHistory],
+    [setHistory]
   );
 
   return setHistoryWrapper;

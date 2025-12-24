@@ -2,7 +2,8 @@
 
 ## 問題概要
 
-`src/utils/historyStorage.js` に定義されている `clearHistoryFromStorage()` 関数が、実際には使用されておらず、かつ設計原則に違反している。
+`src/utils/historyStorage.js` に定義されている `clearHistoryFromStorage()`
+関数が、実際には使用されておらず、かつ設計原則に違反している。
 
 ## 重複の詳細
 
@@ -16,7 +17,8 @@
 ### 問題点
 
 1. **未使用のコード**
-   - `clearHistoryFromStorage()` は定義されているが、どこからも呼び出されていない
+   - `clearHistoryFromStorage()`
+     は定義されているが、どこからも呼び出されていない
    - コードベースの複雑性を不必要に増加させている
 
 2. **設計原則違反**
@@ -41,8 +43,8 @@
 
 ```javascript
 // src/hooks/composites/useResetHistory.js
-import { useCallback } from "react";
-import { saveHistoryToStorage } from "../../utils/historyStorage";
+import { useCallback } from 'react';
+import { saveHistoryToStorage } from '../../utils/historyStorage';
 
 /**
  * 履歴をリセットするカスタムフック

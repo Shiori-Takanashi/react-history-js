@@ -1,7 +1,7 @@
 // src/observers/Tracker.jsx
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "../hooks/useHistory";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from '../hooks/useHistory';
 
 export default function Tracker() {
   const location = useLocation();

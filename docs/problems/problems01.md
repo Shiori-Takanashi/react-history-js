@@ -25,7 +25,7 @@ useHistoryState.js     ← 内部フック（ProviderやHooks内部で使う）
 export function useHistory() {
   const context = useContext(HistoryContext);
   if (!context) {
-    throw new Error("useHistory must be used within a HistoryProvider");
+    throw new Error('useHistory must be used within a HistoryProvider');
   }
   return context;
 }

@@ -1,6 +1,6 @@
 // src/hooks/composites/useResetHistory.js
-import { useCallback } from "react";
-import { saveHistoryToStorage } from "../../utils/historyStorage";
+import { useCallback } from 'react';
+import { saveHistoryToStorage } from '../../utils/historyStorage';
 
 /**
  * 履歴をリセットするカスタムフック

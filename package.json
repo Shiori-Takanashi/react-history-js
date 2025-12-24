@@ -1,14 +1,24 @@
 {
   "name": "react-history-js",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "preview": "vite preview"
+    "lint": "eslint . --config config/eslint.config.js",
+    "lint:fix": "eslint . --config config/eslint.config.js --fix",
+    "stylelint": "stylelint \"src/**/*.css\" --config config/stylelint.config.js --ignore-path config/.stylelintignore",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --config config/stylelint.config.js --ignore-path config/.stylelintignore --fix",
+    "preview": "vite preview",
+    "format": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --write .",
+    "format:check": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --check .",
+    "format:code": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --write \"src/**/*.{js,jsx}\"",
+    "format:styles": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --write \"src/styles/**/*.css\"",
+    "format:md": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --write \"**/*.md\"",
+    "format:check:code": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --check \"src/**/*.{js,jsx}\"",
+    "format:check:styles": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --check \"src/styles/**/*.css\"",
+    "format:check:md": "prettier --config config/prettier.config.js --ignore-path config/.prettierignore --check \"**/*.md\""
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -25,6 +35,8 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "prettier": "^3.7.4",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^36.0.1",
     "vite": "^7.2.4"
   }
 }

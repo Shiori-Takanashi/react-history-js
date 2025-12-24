@@ -5,7 +5,7 @@
   flex-direction: column;
   flex: 1;
   gap: 0.5rem;
-  min-height: 0;  /* flex アイテムが親の高さを超えることを許可 */
+  min-height: 0; /* flex アイテムが親の高さを超えることを許可 */
 }
 
 .history-container {
@@ -18,8 +18,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;  /* 親の残り空間を埋める */
-  max-height: 300px;  /* スクロール有効化のため最大高さを設定 */
+  flex: 1; /* 親の残り空間を埋める */
+  max-height: 300px; /* スクロール有効化のため最大高さを設定 */
 }
 
 /* ネイティブスクロールバーのスタイル（Chromium/WebKit系） */

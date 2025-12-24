@@ -1,8 +1,8 @@
 // src/hooks/useHistoryManager.js
-import { useHistoryState } from "./composites/useHistoryState";
-import { useAddHistory } from "./composites/useAddHistory";
-import { useSetHistory } from "./composites/useSetHistory";
-import { useResetHistory } from "./composites/useResetHistory";
+import { useHistoryState } from './composites/useHistoryState';
+import { useAddHistory } from './composites/useAddHistory';
+import { useSetHistory } from './composites/useSetHistory';
+import { useResetHistory } from './composites/useResetHistory';
 
 /**
  * 履歴管理の全ロジックを統合したカスタムフック
