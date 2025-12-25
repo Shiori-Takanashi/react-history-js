@@ -10,3 +10,5 @@ public/
 
 # GitHub workflows (YAML formatting handled separately)
 .github/
+
+docs/
