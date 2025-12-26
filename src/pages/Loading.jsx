@@ -19,18 +19,18 @@ export default function Loading() {
   return (
     <div className="app-shell">
       <div className="loading-container">
-        <h1 className="loading-title">Histories By React</h1>
+        <h1 className="loading-title">Now Loading</h1>
 
         {/* ロゴ */}
         <div className="logo-container">
           <img src={animal} alt="Logo" className="logo" />
         </div>
 
-        <h2 className="loading-text">Loading...</h2>
+        <h2 className="loading-text">Please wait three seconds</h2>
         <p className="loading-description">
-          アプリケーションを読み込んでいます...
+          3秒後にトップページに移動します。
           <br />
-          しばらくお待ちください
+          しばらくお待ちください。
         </p>
 
         <div className="dots-container">
