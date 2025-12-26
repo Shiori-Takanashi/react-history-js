@@ -1,9 +1,20 @@
 import '../styles/pages/loading.css';
-import cat from '../assets/cat.svg';
-import tiger from '../assets/tiger.svg';
+import cat from '../assets/cat_of_dev.svg';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import tiger from '../assets/tiger_of_build.svg';
 
 export default function Loading() {
   const animal = import.meta.env.DEV ? cat : tiger;
+  const navigate = useNavigate();
+
+  // 3秒後にトップにリダイレクト
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/');
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="app-shell">
