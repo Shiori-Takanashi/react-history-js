@@ -14,7 +14,7 @@ export default function Loading() {
       navigate('/');
     }, 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="app-shell">
